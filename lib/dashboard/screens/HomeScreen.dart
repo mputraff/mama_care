@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:hallo_dunia/dashboard/widgets/ProfileImage.dart';
-import 'package:hallo_dunia/dashboard/widgets/AppBarHome.dart';
-import 'package:hallo_dunia/dashboard/widgets/BodyHome.dart';
+import 'package:MamaCare/dashboard/widgets/AppBarHome.dart';
+import 'package:MamaCare/dashboard/widgets/BodyHome.dart';
+import 'package:MamaCare/auth/models/user_model.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  final UserModel user;
+
+  const HomeScreen({Key? key, required this.user}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey.shade100,
-        title: AppBarHome(),
+        automaticallyImplyLeading: false,
+        backgroundColor: Color(0xFFFFCCE1),
+        title: AppBarHome(username: user.name, profilePicture: user.profilePicture),
       ),
-      body: Container(
-        color: Colors.grey.shade100,
-        child: BodyHome(),
-      ),
-            
+      body: BodyHome(user: user), // Passing user to BodyHome
     );
   }
 }

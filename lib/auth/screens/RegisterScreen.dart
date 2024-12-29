@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hallo_dunia/auth/widgets/InputAuth.dart';
-import 'package:hallo_dunia/auth/widgets/ButtonAuth.dart';
+import 'package:MamaCare/auth/widgets/InputAuth.dart';
+import 'package:MamaCare/auth/widgets/ButtonAuth.dart';
 import '../services/auth_service.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -47,6 +47,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      backgroundColor:  Color(0xFFFFCCE1),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -58,6 +59,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               width: 250,
               fit: BoxFit.cover,
             ),
+            SizedBox(height: 20),
             InputAuth(
               hintText: 'Username',
               icon: Icons.person,

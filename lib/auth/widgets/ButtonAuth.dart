@@ -21,11 +21,11 @@ class ButtonAuth extends StatelessWidget {
         child: Text(text),
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.pink.shade200,
+          foregroundColor: Colors.white,
           textStyle: TextStyle(
             fontFamily: 'Fredoka',
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: Colors.black
           )
         ),        
       ),

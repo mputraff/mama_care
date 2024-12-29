@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
 class ProfileImage extends StatelessWidget {
+  final String imageUrl;
+
+  ProfileImage({required this.imageUrl});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 43,
       width: 43,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(9.0),
+        borderRadius: BorderRadius.circular(20.0),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.6), // Warna bayangan
@@ -18,11 +22,16 @@ class ProfileImage extends StatelessWidget {
         ],
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(9.0),
-        child: Image.asset(
-          'assets/img/uta.jpeg',
-          fit: BoxFit.cover,
-        ),
+        borderRadius: BorderRadius.circular(30),
+        child: imageUrl.isNotEmpty
+            ? Image.network(
+                imageUrl,
+                fit: BoxFit.cover,
+              )
+            : Image.asset(
+                'assets/img/LogoMamaCare.png',
+                fit: BoxFit.cover,
+              ),
       ),
     );
   }

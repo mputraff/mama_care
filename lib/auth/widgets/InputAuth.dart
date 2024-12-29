@@ -51,7 +51,7 @@ class _InputAuthState extends State<InputAuth> {
           ),
           prefixIcon: Padding(
             padding: const EdgeInsets.only(left: 18, right: 10),
-            child: Icon(widget.icon, color: Colors.black),
+            child: Icon(widget.icon, color: Colors.grey.shade800),
           ),
           suffixIcon: widget.isPassword
               ? IconButton(
@@ -67,10 +67,11 @@ class _InputAuthState extends State<InputAuth> {
                 )
               : null,
         ),
-        style: const TextStyle(
+        style: TextStyle(
           fontSize: 16,
           fontFamily: 'Fredoka',
           fontWeight: FontWeight.w500,
+          color: Colors.grey.shade900,
         ),
       ),
     );
