@@ -16,8 +16,7 @@ class BodyHome extends StatefulWidget {
 
 class _BodyHomeState extends State<BodyHome> with SingleTickerProviderStateMixin{
   final List<Map<String, dynamic>> features = [
-    {'icon': Icons.local_hospital, 'label': 'Panduan'},
-    {'icon': Icons.help_outline, 'label': 'FAQ'},
+   
     {'icon': Icons.person, 'label': 'Profil'},
     {'icon': Icons.group_outlined, 'label': 'Komunitas'},
     {'icon': Icons.book, 'label': 'Artikel'},
@@ -145,7 +144,7 @@ class _BodyHomeState extends State<BodyHome> with SingleTickerProviderStateMixin
               ),
               SizedBox(height: 20),
               Container(
-                height: 150,
+                height: 100,
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4,
@@ -160,14 +159,8 @@ class _BodyHomeState extends State<BodyHome> with SingleTickerProviderStateMixin
                         if (features[index]['label'] == 'Chatbot') {
                           Navigator.pushNamed(context, '/chatbot', arguments: widget.user);
                         }
-                        if (features[index]['label'] == 'Panduan') {
-                          Navigator.pushNamed(context, '/breastfeedingGuide');
-                        }
                         if (features[index]['label'] == 'Profil') {
                           Navigator.pushNamed(context, '/profile', arguments: widget.user);
-                        }
-                        if (features[index]['label'] == 'FAQ') {
-                          Navigator.pushNamed(context, '/faq');
                         }
                         if (features[index]['label'] == 'Artikel') {
                           Navigator.pushNamed(context, '/artikel');
@@ -184,7 +177,6 @@ class _BodyHomeState extends State<BodyHome> with SingleTickerProviderStateMixin
                   },
                 ),
               ),
-              SizedBox(height: 10),
               Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

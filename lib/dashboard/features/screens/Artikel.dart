@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'ArticleContent.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ArticleScreen extends StatelessWidget {
   const ArticleScreen({super.key});
@@ -37,44 +37,82 @@ class ArticleScreen extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             _ArticleItem(
-              title: "Manfaat ASI bagi Bayi",
+              source: "ALODOKTER",
+              title: "Pentingnya Peran Ibu Menyusui bagi Dirinya dan Bayi",
               description:
-                  "ASI memiliki banyak manfaat untuk bayi, termasuk meningkatkan sistem kekebalan tubuh dan membantu perkembangan otak.",
-              imageUrl: 'assets/img/benefits_milk.png',
-              onTap: () {
-                // Aksi saat artikel dibaca
-                Navigator.push(
-                  // artikel content
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ArticleContentScreen(
-                      title: "Manfaat ASI bagi Bayi",
-                      content:
-                          "Manfaat ASI eksklusif bagi bayi juga bisa membantu perkembangan otak dan fisiknya. Enggak percaya? Masih melansir dari Direktorat Promosi Kesehatan & Pemberdayaan Masyarakat, manfaat ASI eksklusif bisa menunjang sekaligus membantu proses perkembangan otak dan fisik bayi. Hal tersebut dikarenakan, di usia 0 sampai 6 bulan seorang bayi belum diizinkan mengonsumsi nutrisi apapun selain ASI. Oleh karena itu, selama enam bulan berturut-turut, ASI yang diberikan pada Si Kecil tentu saja memberikan dampak yang besar pada pertumbuhan otak dan fisik bayi selama ke depannya. Di samping itu, berbagai penelitian juga telah menunjukkan bahwa bayi yang mendapat ASI, memiliki tingkat kecerdasan yang lebih tinggi.",
-                      image: 'assets/img/manfaat-asi.png',
-                    ),
-                  ),
-                );
+                  "Peran ibu menyusui sangatlah penting. Tak hanya bagi tumbuh kembang bayi,",
+              imageUrl: 'assets/img/coping_with_breastfeeding.png',
+              onTap: () async {
+                final Uri url = Uri.parse(
+                    "https://www.alodokter.com/mengapa-memilih-menyusui");
+
+                if (!await launchUrl(url,
+                    mode: LaunchMode.externalApplication)) {
+                  // Optional: Tampilkan pesan error jika URL tidak bisa dibuka
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Could not launch $url')),
+                  );
+                }
               },
             ),
             const SizedBox(height: 16),
             _ArticleItem(
-              title: "Mengatasi Tantangan dalam Menyusui",
+              source: "CNN Indonesia",
+              title: "Mendukbangga Soroti Kebiasaan Ngunyah Sirih saat Hamil",
               description:
-                  "Menyusui dapat menjadi tantangan bagi ibu baru. Artikel ini memberikan tips untuk mengatasi berbagai tantangan yang muncul.",
-              imageUrl: 'assets/img/coping_with_breastfeeding.png',
-              onTap: () {
-                // Aksi saat artikel dibaca
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ArticleContentScreen(
-                        title: "Mengatasi Tantangan Menyusui",
-                        content:
-                            "Menyusui adalah pengalaman yang sangat berharga bagi ibu dan bayi, namun seringkali dihadapkan pada berbagai tantangan yang dapat mempengaruhi kenyamanan dan keberhasilan proses tersebut. Salah satu masalah umum yang dihadapi ibu adalah nyeri dan ketidaknyamanan pada puting susu, yang sering disebabkan oleh perlekatan bayi yang tidak tepat, sehingga penting bagi ibu untuk memastikan posisi menyusui yang benar dan menggunakan krim lanolin untuk mengurangi rasa sakit. Selain itu, masalah produksi ASI yang tidak stabil juga sering muncul, baik itu pasokan ASI yang rendah akibat frekuensi menyusui yang tidak memadai atau kelebihan ASI yang dapat menyebabkan payudara bengkak dan saluran tersumbat, sehingga ibu perlu menyusui secara teratur dan melakukan pemijatan pada area yang bengkak. Kelelahan akibat pola tidur yang terganggu juga menjadi tantangan, terutama ketika bayi perlu menyusu setiap beberapa jam, sehingga ibu disarankan untuk tidur siang saat bayi tidur dan melibatkan pasangan dalam menjaga bayi di malam hari. Terakhir, kesulitan dalam teknik menyusui dapat menambah frustrasi, namun dengan mengikuti kelas laktasi atau berkonsultasi dengan konsultan laktasi, ibu dapat memperoleh panduan dan dukungan yang diperlukan untuk menciptakan pengalaman menyusui yang lebih positif dan nyaman.",
-                        image: 'assets/img/coping_with_breastfeeding.png'),
-                  ),
-                );
+                  "[mengunyah sirih] termasuk kultur yang perlu diedukasi. Itu salah satu contohnya, beberapa daerah itu masih ada",
+              imageUrl: 'assets/img/cnn.jpeg',
+              onTap: () async {
+                final Uri url = Uri.parse(
+                    "https://www.cnnindonesia.com/gaya-hidup/20241205085734-255-1173920/bahas-stunting-mendukbangga-soroti-kebiasaan-ngunyah-sirih-saat-hamil");
+
+                if (!await launchUrl(url,
+                    mode: LaunchMode.externalApplication)) {
+                  // Optional: Tampilkan pesan error jika URL tidak bisa dibuka
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Could not launch $url')),
+                  );
+                }
+              },
+            ),
+
+            const SizedBox(height: 16),
+            _ArticleItem(
+              source: "Telemed IHC",
+              title: "Tips Menjaga Kesehatan Ibu Menyusui",
+              description:
+                  "Pemberian ASI (air susu ibu) pada si kecil menawarkan ragam manfaat yang baik untuknya.",
+              imageUrl: 'assets/img/telemed.jpg',
+              onTap: () async {
+                final Uri url = Uri.parse(
+                    "https://telemed.ihc.id/artikel-detail-202-Tips-Menjaga-Kesehatan-Ibu-Menyusui.html");
+                if (!await launchUrl(url,
+                    mode: LaunchMode.externalApplication)) {
+                  // Optional: Tampilkan pesan error jika URL tidak bisa dibuka
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Could not launch $url')),
+                  );
+                }
+              },
+            ),
+
+            const SizedBox(height: 16),
+            _ArticleItem(
+              source: "Okezone",
+              title: "Tips Menjaga Kesehatan Ibu Menyusui",
+              description:
+                  "Pemberian ASI (air susu ibu) pada si kecil menawarkan ragam manfaat yang baik untuknya.",
+              imageUrl: 'assets/img/okezone.jpg',
+              onTap: () async {
+                final Uri url = Uri.parse(
+                    "https://lifestyle.okezone.com/amp/2024/12/20/481/3097272/yuk-cari-tahu-6-kondisi-ibu-hamil-yang-perlu-didampingi-konsultan-fetomaternal");
+                if (!await launchUrl(url,
+                    mode: LaunchMode.externalApplication)) {
+                  // Optional: Tampilkan pesan error jika URL tidak bisa dibuka
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Could not launch $url')),
+                  );
+                }
               },
             ),
             // Tambahkan artikel lainnya sesuai kebutuhan
@@ -86,12 +124,14 @@ class ArticleScreen extends StatelessWidget {
 }
 
 class _ArticleItem extends StatelessWidget {
+  final String source;
   final String title;
   final String description;
   final String imageUrl;
   final VoidCallback onTap;
 
   const _ArticleItem({
+    required this.source,
     required this.title,
     required this.description,
     required this.imageUrl,
@@ -126,11 +166,20 @@ class _ArticleItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      title,
+                      source,
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                      ),
+                    ),
+                    const SizedBox(height: 5),
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.w500,
                         fontSize: 16,
                       ),
+                      textAlign: TextAlign.justify,
                     ),
                     const SizedBox(height: 8),
                     Text(
