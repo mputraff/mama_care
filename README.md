@@ -23,5 +23,10 @@ Sesuaikan pengalaman Anda dengan membuat profil pribadi untuk melacak perjalanan
 - [Repository](https://github.com/mputraff/mama_care.git)
 
 ---
+### 🔑 Our Team
+Irma Dwiyanti (1227050059)
+Irma Rohmatillah (1227050060)
+M Putra Fauzan (1227050075)
+Muhammad Zidan (1227050079)
 
 Mari bersama Mama Care, jadikan perjalanan kehamilan Anda lebih menyenangkan, sehat, dan penuh kebahagiaan! ✨
