@@ -35,7 +35,6 @@ class AppBarHome extends StatelessWidget {
             ],
           ),
           Spacer(),
-          Icon(Icons.notifications_none_outlined),
         ],
       ),
     );

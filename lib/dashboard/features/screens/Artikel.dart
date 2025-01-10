@@ -37,14 +37,14 @@ class ArticleScreen extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             _ArticleItem(
-              source: "ALODOKTER",
-              title: "Pentingnya Peran Ibu Menyusui bagi Dirinya dan Bayi",
+              source: "Artikel ALODOKTER",
+              title: "Penyebab Ibu Hamil Muda Lebih Emosional dan Cara Mengatasinya",
               description:
-                  "Peran ibu menyusui sangatlah penting. Tak hanya bagi tumbuh kembang bayi,",
+                  "Ditinjau oleh : dr. Kevin Adrian 2 Januari 2025",
               imageUrl: 'assets/img/coping_with_breastfeeding.png',
               onTap: () async {
                 final Uri url = Uri.parse(
-                    "https://www.alodokter.com/mengapa-memilih-menyusui");
+                    "https://www.alodokter.com/alasan-ibu-hamil-muda-emosional-dan-cara-mengatasinya");
 
                 if (!await launchUrl(url,
                     mode: LaunchMode.externalApplication)) {
@@ -57,14 +57,14 @@ class ArticleScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             _ArticleItem(
-              source: "CNN Indonesia",
-              title: "Mendukbangga Soroti Kebiasaan Ngunyah Sirih saat Hamil",
+              source: "By ALODOKTER",
+              title: "Cara Mengatasi Sesak Napas pada Ibu Hamil Saat Tidur",
               description:
-                  "[mengunyah sirih] termasuk kultur yang perlu diedukasi. Itu salah satu contohnya, beberapa daerah itu masih ada",
-              imageUrl: 'assets/img/cnn.jpeg',
+                  "Ditinjau oleh : dr. Kevin Adrian 3 Januari 2025",
+              imageUrl: 'assets/img/sesak-hamil.jpg',
               onTap: () async {
                 final Uri url = Uri.parse(
-                    "https://www.cnnindonesia.com/gaya-hidup/20241205085734-255-1173920/bahas-stunting-mendukbangga-soroti-kebiasaan-ngunyah-sirih-saat-hamil");
+                    "https://www.alodokter.com/cara-mengatasi-sesak-napas-pada-ibu-hamil-saat-tidur");
 
                 if (!await launchUrl(url,
                     mode: LaunchMode.externalApplication)) {
@@ -78,14 +78,14 @@ class ArticleScreen extends StatelessWidget {
 
             const SizedBox(height: 16),
             _ArticleItem(
-              source: "Telemed IHC",
-              title: "Tips Menjaga Kesehatan Ibu Menyusui",
+              source: "By ALODOKTER",
+              title: "Fakta di Balik Buah yang Dilarang untuk Ibu Hamil",
               description:
-                  "Pemberian ASI (air susu ibu) pada si kecil menawarkan ragam manfaat yang baik untuknya.",
-              imageUrl: 'assets/img/telemed.jpg',
+                  "Ditinjau oleh : dr. Kevin Adrian 26 Desember 2024",
+              imageUrl: 'assets/img/hamil-duren.jpg',
               onTap: () async {
                 final Uri url = Uri.parse(
-                    "https://telemed.ihc.id/artikel-detail-202-Tips-Menjaga-Kesehatan-Ibu-Menyusui.html");
+                    "https://www.alodokter.com/yuk-ketahui-fakta-di-balik-buah-yang-dilarang-untuk-ibu-hamil");
                 if (!await launchUrl(url,
                     mode: LaunchMode.externalApplication)) {
                   // Optional: Tampilkan pesan error jika URL tidak bisa dibuka
@@ -98,14 +98,14 @@ class ArticleScreen extends StatelessWidget {
 
             const SizedBox(height: 16),
             _ArticleItem(
-              source: "Okezone",
-              title: "Tips Menjaga Kesehatan Ibu Menyusui",
+              source: "By ALODOKTER",
+              title: "4 Penyebab Susah Tidur Malam saat Hamil Muda Dan Cara Mengatasinya",
               description:
-                  "Pemberian ASI (air susu ibu) pada si kecil menawarkan ragam manfaat yang baik untuknya.",
-              imageUrl: 'assets/img/okezone.jpg',
+                  "Ditinjau oleh : dr. Kevin Adrian 27 Desember 2024",
+              imageUrl: 'assets/img/susah-tidur.jpg',
               onTap: () async {
                 final Uri url = Uri.parse(
-                    "https://lifestyle.okezone.com/amp/2024/12/20/481/3097272/yuk-cari-tahu-6-kondisi-ibu-hamil-yang-perlu-didampingi-konsultan-fetomaternal");
+                    "https://www.alodokter.com/susah-tidur-malam-saat-hamil-muda-ini-penjelasannya");
                 if (!await launchUrl(url,
                     mode: LaunchMode.externalApplication)) {
                   // Optional: Tampilkan pesan error jika URL tidak bisa dibuka
@@ -168,7 +168,7 @@ class _ArticleItem extends StatelessWidget {
                     Text(
                       source,
                       style: const TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500,
                         fontSize: 14,
                       ),
                     ),
@@ -176,7 +176,7 @@ class _ArticleItem extends StatelessWidget {
                     Text(
                       title,
                       style: const TextStyle(
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w400,
                         fontSize: 16,
                       ),
                       textAlign: TextAlign.justify,
