@@ -1,16 +1,32 @@
-# hallo_dunia
+# Mama Care
 
-A new Flutter project.
+Mama Care adalah aplikasi yang dirancang khusus untuk menjadi sahabat terbaik para ibu hamil. Kami hadir untuk memberikan informasi terpercaya, dukungan penuh, dan komunitas yang hangat selama masa kehamilan Anda.
 
-## Getting Started
+## Fitur Unggulan
 
-This project is a starting point for a Flutter application.
+### 🤖 Chat Bot
+Asisten virtual cerdas yang selalu siap membantu menjawab pertanyaan Anda seputar kehamilan, mulai dari tips kesehatan hingga info perkembangan bayi.
 
-A few resources to get you started if this is your first Flutter project:
+### 📖 Artikel
+Kumpulan artikel informatif yang disusun oleh para ahli, memberikan wawasan mendalam tentang kehamilan, pola makan, dan persiapan menjadi ibu.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 🫂 Komunitas
+Ruang berbagi cerita dan pengalaman dengan sesama ibu hamil. Dapatkan dukungan emosional dari komunitas yang saling peduli.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 🔑 Profil Pribadi
+Sesuaikan pengalaman Anda dengan membuat profil pribadi untuk melacak perjalanan kehamilan Anda secara mudah dan terorganisir.
+
+## Tautan Penting
+
+- [🎥 Video Pitch Deck](https://drive.google.com/drive/folders/18JjCzv0zaCUb18buFD2tWrjLTTKBwy_5)  
+- [📱 Aplikasi di Google Play](https://play.google.com/store/apps/details?id=com.mamacare.mamacare)
+- [Repository](https://github.com/mputraff/mama_care.git)
+
+---
+### 🔑 Our Team
+Irma Dwiyanti (1227050059)
+Irma Rohmatillah(1227050060)
+M Putra Fauzan (1227050075)
+Muhammad Zidan (1227050079)
+
+Mari bersama Mama Care, jadikan perjalanan kehamilan Anda lebih menyenangkan, sehat, dan penuh kebahagiaan! ✨
