@@ -19,7 +19,7 @@ Sesuaikan pengalaman Anda dengan membuat profil pribadi untuk melacak perjalanan
 ## Tautan Penting
 
 - [🎥 Video Pitch Deck](https://drive.google.com/drive/folders/18JjCzv0zaCUb18buFD2tWrjLTTKBwy_5)  
-- [📱 Aplikasi di Google Play](#)
+- [📱 Aplikasi di Google Play](https://play.google.com/store/apps/details?id=com.mamacare.mamacare)
 - [Repository](https://github.com/mputraff/mama_care.git)
 
 ---
