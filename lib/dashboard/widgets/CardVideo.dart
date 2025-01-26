@@ -3,12 +3,14 @@ import 'package:url_launcher/url_launcher.dart';
 
 class CardVideo extends StatelessWidget {
   final String description;
+  final String views;
   final String image;
   final String url;
 
   const CardVideo(
       {Key? key,
       required this.description,
+      required this.views,
       required this.image,
       required this.url})
       : super(key: key);
@@ -42,34 +44,52 @@ class CardVideo extends StatelessWidget {
     return GestureDetector(
         onTap: _launchURL,
         child: Container(
-          width: 250,
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.black, width: 2),
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+          width: 210,
+          height: 195,
+          decoration: new BoxDecoration(
+            color: Color.fromARGB(255, 125, 159, 168),
+            borderRadius: new BorderRadius.circular(10.0),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ClipRRect(
-                borderRadius:
-                    BorderRadius.circular(10), // Atur radius sesuai kebutuhan
-                child: Image.asset(
-                  image,
-                  fit: BoxFit.cover, // Atur fit sesuai kebutuhan
+              Padding(
+                padding: EdgeInsets.all(5),
+                child: ClipRRect(
+                  borderRadius:
+                      BorderRadius.circular(5), // Atur radius sesuai kebutuhan
+                  child: Image.asset(
+                    image,
+                    fit: BoxFit.cover, // Atur fit sesuai kebutuhan
+                  ),
                 ),
               ),
               SizedBox(height: 5),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5),
+                padding: EdgeInsets.only(left: 8, right: 5),
                 child: Text(
                   description,
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 12,
                     fontWeight: FontWeight.w400,
                     fontFamily: 'Fredoka',
+                    color: Colors.grey[100],
                   ),
                 ),
-              )
+              ),
+              SizedBox(height: 6),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: Text(
+                  views,
+                  style: TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Fredoka',
+                    color: Colors.grey[100],
+                  ),
+                ),
+              ),
             ],
           ),
         ));

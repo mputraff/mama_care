@@ -35,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
       builder: (BuildContext context) {
         return Center(
           child: CircularProgressIndicator(
-            color: Colors.pink.shade200,
+            color: Color(0xFF16404D),
           ),
         );
       },
@@ -91,62 +91,157 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      backgroundColor: Color(0xFFFFCCE1),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.asset(
-              'assets/img/pregnant.png',
-              height: 250,
-              width: 250,
-              fit: BoxFit.cover,
+        backgroundColor: Color(0xFF7EACB5),
+        body: SingleChildScrollView(
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 240,
+              child: Padding(
+                padding: EdgeInsets.only(
+                  top: 26,
+                ),
+                child: Image.asset(
+                  "assets/img/login_image.png",
+                  fit: BoxFit.none,
+                  scale: 3.7,
+                ),
+              ),
             ),
-            SizedBox(height: 20),
-            InputAuth(
-              hintText: 'Email',
-              icon: Icons.email,
-              controller: emailController,
-            ),
-            SizedBox(height: 10),
-            InputAuth(
-              hintText: 'Password',
-              icon: Icons.lock,
-              controller: passwordController,
-              isPassword: true,
-            ),
-            SizedBox(height: 10),
-            ButtonAuth(
-              text: 'Login',
-              onPressed: () => login(context),
-            ),
-            SizedBox(height: 14),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Don\'t have an account? ',
-                  style: TextStyle(
-                    fontFamily: 'Fredoka',
-                    fontWeight: FontWeight.w400,
+            //Color(0xFF7EACB5)
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 586,
+              decoration: BoxDecoration(
+                color: Color(0xFFF2F9FF),
+                borderRadius: BorderRadius.vertical(top: Radius.circular(35)),
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    height: 65,
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Login to Mama Care",
+                      style: TextStyle(
+                        fontFamily: 'Fredoka',
+                        fontWeight: FontWeight.w500,
+                        fontSize: 19,
+                        color: Colors.grey.shade800,
+                      ),
+                    ),
                   ),
-                ),
-                TextButton(
-                  onPressed: () => {Navigator.pushNamed(context, '/register')},
-                  child: Text('Register'),
-                  style: TextButton.styleFrom(
-                      foregroundColor: Colors.pink.shade200,
-                      textStyle: TextStyle(
-                          fontFamily: 'Fredoka',
-                          fontWeight: FontWeight.w500,
-                          color: Colors.pink.shade300)),
-                ),
-              ],
-            )
-          ],
-        ),
-      ),
-    );
+                  Container(
+                      height: 521,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFA6CDC6),
+                        borderRadius:
+                            BorderRadius.vertical(top: Radius.circular(35)),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(left: 50),
+                              child: Text(
+                                "Email Address",
+                                style: TextStyle(
+                                    fontFamily: 'Fredoka',
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 17,
+                                    color: Colors.black),
+                              ),
+                            ),
+                            SizedBox(height: 5),
+                            InputAuth(
+                              hintText: 'youremail@domain.com',
+                              icon: Icons.email,
+                              controller: emailController,
+                            ),
+                            SizedBox(height: 15),
+                            Padding(
+                              padding: EdgeInsets.only(left: 50),
+                              child: Text(
+                                "Password",
+                                style: TextStyle(
+                                    fontFamily: 'Fredoka',
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 17,
+                                    color: Colors.black),
+                              ),
+                            ),
+                            SizedBox(height: 5),
+                            InputAuth(
+                              hintText: 'password',
+                              icon: Icons.lock,
+                              controller: passwordController,
+                              isPassword: true,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(left: 190),
+                              child: TextButton(
+                                  style: ElevatedButton.styleFrom(
+                                      foregroundColor: Colors.black,
+                                      textStyle: TextStyle(
+                                        fontFamily: 'Fredoka',
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500,
+                                      )),
+                                  onPressed: () => {
+                                    Navigator.pushNamed(context, '/forgot-password')
+                                  },
+                                  child: Text("Forgot Password ?")),
+                            ),
+                            Container(
+                              width: MediaQuery.of(context).size.width,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  ButtonAuth(
+                                      text: "Login",
+                                      onPressed: () => login(context))
+                                ],
+                              ),
+                            ),
+                            Container(
+                              width: MediaQuery.of(context).size.width,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Don't have an account?",
+                                    style: TextStyle(
+                                        fontFamily: 'Fredoka',
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                  TextButton(
+                                    onPressed: () => {
+                                      Navigator.pushNamed(context, '/register')
+                                    },
+                                    child: Text('Register'),
+                                    style: TextButton.styleFrom(
+                                        foregroundColor: Colors.black,
+                                        textStyle: TextStyle(
+                                            fontFamily: 'Fredoka',
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.black)),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ))
+                ],
+              ),
+            ),
+          ]),
+        ));
   }
 }

@@ -8,7 +8,8 @@ class FirstScreen extends StatefulWidget {
   _FirstScreenState createState() => _FirstScreenState();
 }
 
-class _FirstScreenState extends State<FirstScreen> with SingleTickerProviderStateMixin {
+class _FirstScreenState extends State<FirstScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
 
@@ -45,83 +46,99 @@ class _FirstScreenState extends State<FirstScreen> with SingleTickerProviderStat
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 246, 191, 209),
+      backgroundColor: Color(0xFFA6CDC6),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 40),
+            SizedBox(height: 50),
             // Gunakan FadeTransition untuk animasi
-            FadeTransition(
-              opacity: _animation,
-              child: Image.asset(
-                'assets/img/pregnant.png',
-                height: 350,
-                width: 350,
-                fit: BoxFit.cover,
-              ),
-            ),
-            SizedBox(height: 10),
             FadeTransition(
               opacity: _animation,
               child: Text(
                 ' Welcome to Mama Care',
                 style: TextStyle(
-                  fontSize: 23,
+                  fontSize: 24,
                   fontFamily: 'Fredoka',
                   fontWeight: FontWeight.w500,
                 ),
               ),
             ),
-            SizedBox(height: 10),
+
+            SizedBox(height: 5),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40),
               child: FadeTransition(
                 opacity: _animation,
                 child: Text(
-                  'Mama Care hadir sebagai teman setia bagi para ibu hamil, memberikan informasi, dukungan, dan komunitas yang dibutuhkan selama masa kehamilan.',
+                  'Mama Care hadir sebagai teman setia bagi para ibu hamil dan menyusui.',
                   style: TextStyle(
                     fontSize: 16,
                     fontFamily: 'Fredoka',
                     fontWeight: FontWeight.w400,
-                    color: Colors.grey.shade900,
+                    color: Colors.black,
                   ),
-                  textAlign: TextAlign.justify,
+                  textAlign: TextAlign.center,
                 ),
               ),
             ),
-            SizedBox(height: 20),
-            FadeTransition(
-              opacity: _animation,
-              child: ElevatedButton(
-                child: Text(
-                  'Get Started',
-                  style: TextStyle(fontFamily: 'Fredoka'),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.pink.shade200,
-                  foregroundColor: Colors.white,
-                ),
-                onPressed: () {
-                  // Panggil onComplete sebelum navigasi
-                  widget.onComplete();
-                  Navigator.pushReplacementNamed(context, '/login');
-                },
-              ),
-            ),
-            SizedBox(height: 130),
+
+            SizedBox(height: 7),
+
             FadeTransition(
               opacity: _animation,
               child: Text(
-                'Mama Care',
+                'Click get started to learn more',
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 14.5,
                   fontFamily: 'Fredoka',
                   fontWeight: FontWeight.w400,
+                  color: Colors.black,
                 ),
               ),
             ),
+
+            SizedBox(height: 80),
+
+            FadeTransition(
+              opacity: _animation,
+              child: Image.asset(
+                'assets/img/logo_first.png',
+                height: 310,
+                width: 310,
+                fit: BoxFit.cover,
+              ),
+            ),
+
+            SizedBox(height: 100),
+
+            FadeTransition(
+                opacity: _animation,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 20),
+                  child: ElevatedButton(
+                    child: Text(
+                      'Get Started',
+                      style: TextStyle(
+                        fontFamily: 'Fredoka',
+                        fontSize: 16,
+                        
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFF8D77AB),
+                      foregroundColor: Colors.white,
+                      minimumSize: Size(170, 45),
+                    ),
+                    onPressed: () {
+                      // Panggil onComplete sebelum navigasi
+                      widget.onComplete();
+                      Navigator.pushReplacementNamed(context, '/login');
+                    },
+                  ),
+                )),
           ],
         ),
       ),

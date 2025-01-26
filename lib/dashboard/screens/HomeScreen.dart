@@ -12,9 +12,10 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 70,
         automaticallyImplyLeading: false,
-        backgroundColor: Color(0xFFFFCCE1),
-        title: AppBarHome(username: user.name, profilePicture: user.profilePicture),
+        backgroundColor: Color(0xFFA6CDC6),
+        title: AppBarHome(username: user.name, profilePicture: user.profilePicture, user: user),
       ),
       body: BodyHome(user: user), // Passing user to BodyHome
     );

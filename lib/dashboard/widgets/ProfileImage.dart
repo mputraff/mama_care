@@ -8,21 +8,21 @@ class ProfileImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 43,
-      width: 43,
+      height: 44,
+      width: 44,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(10.0),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.6), // Warna bayangan
-            spreadRadius: 1, // Jarak bayangan
-            blurRadius: 1, // Tingkat keburaman bayangan
-            offset: Offset(0, 1), // Posisi bayangan
+            color: Colors.black,
+            spreadRadius: 0,
+            blurRadius: 1.8,
+            offset: Offset(0, 0),
           ),
-        ],
+        ]
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(10),
         child: imageUrl.isNotEmpty
             ? Image.network(
                 imageUrl,

@@ -11,6 +11,8 @@ import 'package:MamaCare/dashboard/features/screens/Artikel.dart';
 import 'package:MamaCare/dashboard/features/screens/KomunitasScreen.dart';
 import 'package:MamaCare/auth/models/user_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:MamaCare/auth/screens/OtpScreen.dart';
+import 'package:MamaCare/auth/screens/ForgotPassScreen.dart';
 import 'dart:convert';
 
 void main() async {
@@ -84,25 +86,25 @@ class _MyAppState extends State<MyApp> {
 
   Widget _buildLoadingScreen() {
     return Scaffold(
-      backgroundColor: Colors.pink[50],
+      backgroundColor: Color(0xFFA6CDC6),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/img/pregnant.png',
+              'assets/img/logo_first.png',
               height: 300,
               width: 300,
             ),
             SizedBox(height: 20),
             CircularProgressIndicator(
-              color: Colors.pink.shade200,
+              color: Color(0xFF16404D),
             ),
             SizedBox(height: 20),
             Text(
               'Memuat Mama Care...',
               style: TextStyle(
-                color: Colors.pink.shade300,
+                color: Color(0xFF16404D),
                 fontSize: 16,
                 fontFamily: 'Fredoka',
               ),
@@ -132,6 +134,8 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/login': (context) => LoginScreen(),
         '/register': (context) => RegisterScreen(),
+        '/forgot-password': (context) => ForgotPassScreen(), 
+        '/otp' : (context) => OtpScreen(),
         '/home': (context) {
           final user = ModalRoute.of(context)?.settings.arguments as UserModel? ?? _user;
           return HomeScreen(user: user!);

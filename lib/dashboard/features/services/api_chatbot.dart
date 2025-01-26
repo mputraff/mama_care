@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  final String apiUrl = 'https://chatbot-api-447228900001.asia-southeast2.run.app/chat';
+  final String apiUrl = 'https://chatbot-api-731659877612.asia-southeast2.run.app/chat';
 
   Future<String> sendMessage(String prompt) async {
     final response = await http.post(

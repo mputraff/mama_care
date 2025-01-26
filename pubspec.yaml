@@ -79,6 +79,9 @@ flutter:
      - assets/img/coping_with_breastfeeding.png
      - assets/img/gambar2.png
      - assets/img/gambar3.png
+     - assets/img/logo_first.png
+     - assets/img/otp.png
+     - assets/img/forgotPass.png
        #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

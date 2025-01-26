@@ -36,28 +36,34 @@ class _InputAuthState extends State<InputAuth> {
         },
         decoration: InputDecoration(
           hintText: widget.hintText,
-          contentPadding: const EdgeInsets.symmetric(horizontal: 30),
+          hintStyle: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w400,
+            fontFamily: 'Fredoka',
+            color: Color(0xFF16404D),  
+          ),
+          contentPadding: const EdgeInsets.symmetric(horizontal: 10),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(40),
-            borderSide: BorderSide(color: Colors.pink.shade200, width: 2.0),
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: Color(0xFF16404D), width: 2.0),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(40),
-            borderSide: BorderSide(color: Colors.pink.shade200, width: 2.0),
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: Color(0xFF16404D), width: 2.0),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(40),
-            borderSide: BorderSide(color: Colors.pink.shade200, width: 2.0),
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: Color(0xFF16404D), width: 2.0),
           ),
           prefixIcon: Padding(
             padding: const EdgeInsets.only(left: 18, right: 10),
-            child: Icon(widget.icon, color: Colors.grey.shade800),
+            child: Icon(widget.icon, color: Color(0xFF16404D)),
           ),
           suffixIcon: widget.isPassword
               ? IconButton(
                   icon: Icon(
                     _isObscure ? Icons.visibility_off : Icons.visibility,
-                    color: Colors.black,
+                    color: Color(0xFF16404D),
                   ),
                   onPressed: () {
                     setState(() {
@@ -71,7 +77,7 @@ class _InputAuthState extends State<InputAuth> {
           fontSize: 16,
           fontFamily: 'Fredoka',
           fontWeight: FontWeight.w500,
-          color: Colors.grey.shade900,
+          color: Color(0xFF16404D),
         ),
       ),
     );
